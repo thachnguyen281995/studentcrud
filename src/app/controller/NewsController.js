@@ -37,5 +37,18 @@ class NewsController {
             .then(() => res.redirect("back"))
             .catch(next);
     }
+    createUser(req, res, next) {
+        
+    }
+    getUser(req, res, next) {
+        Courses.find()
+        .then((users)=>console.log('users',Courses))
+        res.status(200).json(users)
+        .catch(err=>{
+            res.status(500).json(err)
+        })
+
+    }
 }
+
 module.exports = new NewsController();
